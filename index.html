@@ -399,6 +399,83 @@
     document.addEventListener('DOMContentLoaded', () => {
         initializeAndDisplayAllBtechMarks();
     });
+async function recommendCourses(data) {
+    try {
+        // Load subjects CSV
+        let subjectsText = await fetch('data/work1.csv').then(res => res.text());
+        let subjectsRows = subjectsText.trim().split('\n').map(row => row.split(','));
+        let dfSubjects = subjectsRows.map(r => [r[0].trim(), r[1].trim().toUpperCase()]);
+
+        // Load electives CSV
+        let electivesText = await fetch('data/sheet3.csv').then(res => res.text());
+        let electivesRows = electivesText.trim().split('\n').map(row => row.split(','));
+        let dfElectives = electivesRows.map(r => [r[0] ? r[0].trim() : '', r[1] ? r[1].replace(/•/g, '').trim().toUpperCase() : '']);
+
+        // Build category scores
+        let categoryScores = {};
+        for (let subjectKey in data) {
+            let mark = parseFloat(data[subjectKey]);
+            if (isNaN(mark)) continue;
+
+            let subjectClean = subjectKey.trim().toUpperCase();
+            for (let [subName, subCat] of dfSubjects) {
+                if (subjectClean.includes(subName.toUpperCase())) {
+                    if (!categoryScores[subCat]) categoryScores[subCat] = [];
+                    categoryScores[subCat].push(mark);
+                    break;
+                }
+            }
+        }
+
+        if (Object.keys(categoryScores).length === 0) {
+            return ["No matching subjects found in our database"];
+        }
+
+        // Average scores per category
+        let avgScores = {};
+        for (let cat in categoryScores) {
+            let marks = categoryScores[cat];
+            avgScores[cat] = marks.reduce((a, b) => a + b, 0) / marks.length;
+        }
+
+        // Top 3 categories
+        let topCategories = Object.entries(avgScores)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 3);
+
+        // Calculate elective scores
+        let electiveScores = {};
+        let currentCourse = "";
+        for (let [course, cat] of dfElectives) {
+            if (course) {
+                currentCourse = course;
+            }
+            if (cat && currentCourse) {
+                for (let [topCat, score] of topCategories) {
+                    if (cat.includes(topCat)) {
+                        electiveScores[currentCourse] = (electiveScores[currentCourse] || 0) + score;
+                    }
+                }
+            }
+        }
+
+        if (Object.keys(electiveScores).length === 0) {
+            return ["No specific electives found for your top categories"];
+        }
+
+        // Top 4 electives
+        let topElectives = Object.entries(electiveScores)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 4)
+            .map(e => e[0]);
+
+        return topElectives;
+
+    } catch (err) {
+        console.error(err);
+        return ["Error processing your request"];
+    }
+}
 
     function submitForm(e) {
       e.preventDefault(); // Prevent default page reload
@@ -485,28 +562,16 @@
 
       // At this point, `data` object contains all the collected marks
       // You can now send `data` to your backend using fetch as before.
-      fetch('/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      .then(res => {
-        if (!res.ok) {
-            // If response is not OK (e.g., 404, 500), try to read error message
-            return res.text().then(text => { throw new Error(text) });
-        }
-        return res.json();
-      })
-      .then(recommendations => {
-        alert("Recommended Electives:\n" + recommendations.join("\n"));
-      })
-      .catch(err => {
-        alert("Error occurred: " + err.message); // Display the error message from the thrown error
-      });
-    }
 
+recommendCourses(data)
+            .then(recommendations => {
+                alert("Recommended Electives:\n" + recommendations.join("\n"));
+            })
+            .catch(err => {
+                alert("Error occurred: " + err.message);
+            });
+    }
   </script>
 </body>
+
 </html>
