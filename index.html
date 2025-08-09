@@ -402,12 +402,12 @@
 async function recommendCourses(data) {
     try {
         // Load subjects CSV
-        let subjectsText = await fetch('data/work1.csv').then(res => res.text());
+       let subjectsText = await fetch('work1.csv').then(res => res.text());
         let subjectsRows = subjectsText.trim().split('\n').map(row => row.split(','));
         let dfSubjects = subjectsRows.map(r => [r[0].trim(), r[1].trim().toUpperCase()]);
 
         // Load electives CSV
-        let electivesText = await fetch('data/sheet3.csv').then(res => res.text());
+       let electivesText = await fetch('sheet3.csv').then(res => res.text());
         let electivesRows = electivesText.trim().split('\n').map(row => row.split(','));
         let dfElectives = electivesRows.map(r => [r[0] ? r[0].trim() : '', r[1] ? r[1].replace(/•/g, '').trim().toUpperCase() : '']);
 
@@ -575,3 +575,4 @@ recommendCourses(data)
 </body>
 
 </html>
+
