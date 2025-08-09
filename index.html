@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Academic Details</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      background: #f4f4f4;
+    }
+    h2 {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      width: 47%;
+    }
+    .form-section {
+      background: white;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input[type="number"],
+    select {
+      width: 50%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    .note {
+      font-style: italic;
+      margin-top: 10px;
+      color: #888;
+    }
+    .submit-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    button[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .electives-display {
+      padding-left: 15px;
+    }
+    .error-message {
+        color: red;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    /* New styles for B.Tech semester sections */
+    .btech-semester-section {
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .btech-semester-section h4 {
+      margin-top: 0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Student Details Form</h2>
+
+  <form id="academicForm" onsubmit="submitForm(event)">
+    <div class="form-section">
+      <h3>10th Class Marks</h3>
+      <label for="board10">Select Board:<span style="color:red">*</span></label>
+      <select id="board10" onchange="showSubjects10()" required>
+        <option value="">-- Select Board --</option>
+        <option value="state">State Board</option>
+        <option value="cbse">CBSE</option>
+        <option value="icse">ICSE</option>
+      </select>
+      <div id="subjects10"></div>
+      <div id="tenthError" class="error-message" style="display:none;">Please fill all required 10th class marks.</div>
+    </div>
+
+    <div class="form-section">
+      <h3>Intermediate (11th & 12th) Class Marks</h3>
+      <label for="board11">Select Board:<span style="color:red">*</span></label>
+      <select id="board11" onchange="showGroups11()" required>
+        <option value="">-- Select Board --</option>
+        <option value="state">State Board</option>
+        <option value="cbse">CBSE</option>
+        <option value="isc">ISC</option>
+      </select>
+      <div id="groupSection11"></div>
+      <div id="subjects11"></div>
+      <div id="groupSection12"></div>
+      <div id="subjects12"></div>
+      <div id="intermediateError" class="error-message" style="display:none;">Please fill all required Intermediate marks.</div>
+    </div>
+
+    <div class="form-section">
+      <h3>B.Tech Marks (All 4 Semesters are Mandatory)</h3>
+      <div id="btechSemestersContainer"></div>
+      <div id="btechError" class="error-message" style="display:none;">Please fill all required B.Tech marks across all 4 semesters.</div>
+    </div>
+
+    <div class="form-section">
+      <h3>Elective Courses (Displayed for Reference)</h3>
+      <div class="electives-display">
+        <strong>1st Semester:</strong>
+        <ul>
+          <li>Advanced Algorithm</li>
+          <li>Advanced Computer Architecture</li>
+          <li>Artificial Intelligence</li>
+          <li>Computational Number Theory</li>
+          <li>Programming Language Concepts</li>
+          <li>Software Testing</li>
+        </ul>
+        <strong>2nd & 3rd Semester:</strong>
+        <ul>
+          <li>Advanced Data Mining</li>
+          <li>Advanced Databases</li>
+          <li>Bio-Informatics</li>
+          <li>Computer Vision and Image Processing</li>
+          <li>Data Networks</li>
+          <li>Design Patterns</li>
+          <li>Foundations of Blockchain Technology</li>
+          <li>Information Retrieval</li>
+          <li>Mobile Computing</li>
+          <li>Natural Language Processing</li>
+          <li>Program Analysis and Verification</li>
+          <li>Software Metrics and Software Project Management</li>
+        </ul>
+
+        <strong>4th Semester:</strong>
+        <ul>
+          <li>Cloud Computing</li>
+          <li>Data Science</li>
+          <li>Deep Learning</li>
+          <li>Design of Secure Protocols</li>
+          <li>Internet of Things</li>
+          <li>Intrusion Detection Systems</li>
+          <li>Quantum Computing</li>
+          <li>Real Time Systems</li>
+          <li>Secure Software Engineering</li>
+          <li>Security and Privacy</li>
+          <li>Service Oriented Architecture</li>
+          <li>Software Reliability Techniques</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note">Note: For 10th and Intermediate, leave blank any subjects not taken by the student *if not marked with **. For B.Tech, all displayed subjects are mandatory and will be pre-filled for demo purposes.</p>
+    <p class="note">Note: The above given values are default values</p>
+    <div class="submit-container">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <script>
+    // Stores marks for 10th and Inter
+    const classMarksStorage = {};
+    // Stores marks for all B.Tech semesters
+    const btechMarksStorage = {};
+
+    function getRandomMark() {
+      return Math.floor(Math.random() * (99 - 30 + 1)) + 30; // Random between 30 and 99
+    }
+
+    // Function to create subject input fields
+    // currentValues is used to pre-fill if a value already exists (for B.Tech specifically)
+    function createInputs(subjects, label, requiredSubjects = [], currentValues = {}) {
+        return subjects.map(sub => {
+            const isRequired = requiredSubjects.includes(sub);
+            const star = isRequired ? '<span style="color:red">*</span>' : '';
+            const requiredAttr = isRequired ? 'required' : '';
+            const key = `${sub}-${label}`;
+            // Use current value if available, otherwise get a random mark
+            const val = currentValues[key] !== undefined && currentValues[key] !== '' ? currentValues[key] : getRandomMark();
+            return `
+                <label>${sub} (${label}) ${star}</label>
+                <input type="number" name="${key}" placeholder="Enter marks" min="30" max="100" value="${val}" ${requiredAttr} oninput="storeMark(this, '${label}')">
+            `;
+        }).join('');
+    }
+
+    // Stores marks in the appropriate storage object
+    function storeMark(inputElement, sectionLabel) {
+        if (sectionLabel.startsWith('B.Tech')) {
+            btechMarksStorage[inputElement.name] = inputElement.value;
+        } else {
+            classMarksStorage[inputElement.name] = inputElement.value;
+        }
+    }
+
+    // 10th Class
+    function showSubjects10() {
+      const board = document.getElementById("board10").value;
+      const container = document.getElementById("subjects10");
+      // Clear previous subjects when board changes
+      container.innerHTML = "";
+      // Clear 10th marks from storage to reflect new board selection
+      Object.keys(classMarksStorage).forEach(key => {
+          if (key.endsWith('-10th')) delete classMarksStorage[key];
+      });
+
+      let subjects = [];
+      let requiredSubjects = [];
+      if (board === "state") {
+        subjects = ["Mathematics", "Science", "Social", "English", "Telugu", "Hindi"];
+        requiredSubjects = ["Mathematics", "Science", "Social", "English", "Telugu", "Hindi"];
+      } else if (board === "cbse") {
+        subjects = ["Mathematics", "Science", "Social", "English", "Hindi", "Computer Science", "Physical Education"];
+        requiredSubjects = ["Mathematics", "Science", "Social", "English"];
+      } else if (board === "icse") {
+        subjects = ["English", "Hindi", "Telugu", "History & Civics", "Geography", "Mathematics", "Physics", "Chemistry", "biology", "Economics", "Environmental Science", "Computer Applications"];
+        requiredSubjects = ["English", "History & Civics", "Geography", "Mathematics", "Physics", "Chemistry", "biology"];
+      }
+      container.innerHTML = createInputs(subjects, "10th", requiredSubjects, classMarksStorage);
+    }
+
+    // Intermediate
+   function showGroups11() {
+      const groupSection11 = document.getElementById("groupSection11");
+      const groupSection12 = document.getElementById("groupSection12");
+      const subjects11 = document.getElementById("subjects11");
+      const subjects12 = document.getElementById("subjects12");
+
+      // Clear previous subjects and marks when board changes
+      groupSection11.innerHTML = "";
+      subjects11.innerHTML = "";
+      groupSection12.innerHTML = "";
+      subjects12.innerHTML = "";
+      // Clear inter marks from storage
+      Object.keys(classMarksStorage).forEach(key => {
+          if (key.endsWith('-11th') || key.endsWith('-12th')) delete classMarksStorage[key];
+      });
+
+      const board = document.getElementById("board11").value;
+      if (board) { // Only show groups if a board is selected
+          // --- START OF CHANGES ---
+          let optionsHtml = `
+            <option value="">-- Select Group --</option>
+            <option value="mpc">MPC</option>
+            <option value="bipc">BiPC</option>
+            <option value="cec">CEC</option>
+            <option value="hec">HEC</option>
+            <option value="mec">MEC</option>
+          `;
+
+          // Add MBiPC only if board is not 'state'
+          if (board !== 'state') {
+            optionsHtml += `<option value="mbipc">MBiPC</option>`;
+          }
+
+          groupSection11.innerHTML = `
+            <label for="group11">Select 11th Class Group:<span style="color:red">*</span></label>
+            <select id="group11" onchange="showSubjectsInter('11')" required>
+              ${optionsHtml}
+            </select>
+          `;
+          groupSection12.innerHTML = `
+            <label for="group12">Select 12th Class Group:<span style="color:red">*</span></label>
+            <select id="group12" onchange="showSubjectsInter('12')" required>
+              ${optionsHtml}
+            </select>
+          `;
+          // --- END OF CHANGES ---
+      }
+    }
+    function showSubjectsInter(year) {
+      const board = document.getElementById("board11").value;
+      const group = document.getElementById(`group${year}`).value;
+      const container = document.getElementById(`subjects${year}`);
+
+      // Clear previous subjects for this year when group changes
+      container.innerHTML = "";
+      Object.keys(classMarksStorage).forEach(key => {
+          if (key.endsWith(`-${year}th`)) delete classMarksStorage[key];
+      });
+
+      let subjects = [];
+      let requiredSubjects = [];
+
+      if (board === "state") {
+        if (group === "mpc") {
+          subjects = year === "11" ? ["Maths 1-A", "Maths 1-B", "Physics", "Chemistry", "English", "Sanskrit"]
+                                    : ["Maths 2-A", "Maths 2-B", "Physics", "Chemistry", "English", "Sanskrit"];
+          requiredSubjects = ["Physics", "Chemistry", "English", "Maths 1-A", "Maths 1-B", "Maths 2-A", "Maths 2-B", "Sanskrit"];
+        } else if (group === "bipc") {
+          subjects = ["Botany", "Zoology", "Physics", "Chemistry", "English", "Sanskrit"];
+          requiredSubjects = ["Botany", "Zoology", "Physics", "Chemistry", "English", "Sanskrit"];
+        } else if (group === "cec") {
+          subjects = ["Economics", "Civics", "Commerce", "English", "Sanskrit"];
+          requiredSubjects = ["Economics", "Commerce", "English", "Civics"];
+        } else if (group === "hec") {
+          subjects = ["History", "Economics", "Civics", "English", "Sanskrit"];
+          requiredSubjects = ["History", "Economics", "English", "Civics"];
+        } else if (group === "mec") {
+          subjects = ["Mathematics", "Economics", "Commerce", "English", "Sanskrit"];
+          requiredSubjects = ["Mathematics", "Economics", "Commerce", "English"];
+        }
+      } else if (board === "cbse") {
+        if (group === "mpc") {
+          subjects = ["Mathematics", "Physics", "Chemistry", "English", "Hindi", "Computer Science"];
+          requiredSubjects = ["Mathematics", "Physics", "Chemistry", "English"];
+        } else if (group === "bipc") {
+          subjects = ["Biology", "Physics", "Chemistry", "English", "Mathematics", "Computer Science", "Physical Education"];
+          requiredSubjects = ["Biology", "Physics", "Chemistry", "English"];
+        } else if (group === "cec") {
+          subjects = ["Accountancy", "Commerece", "Business Studies", "Economics", "English", "Mathematics", "Informatics Practices", "Telugu", "Hindi", "Sanskrit"];
+          requiredSubjects = ["Accountancy", "Economics", "Commerece", "Civics", "English"];
+        } else if (group === "hec") {
+          subjects = ["History", "Economics", "Civics", "English", "Telugu", "Hindi", "Sanskrit", "Political Science", "Geography", "Sociology"];
+          requiredSubjects = ["History", "Economics", "Civics", "English"];
+        } else if (group === "mec") {
+          subjects = ["Mathematics", "Economics", "Commerce", "English", "Accountancy", "Business Studies", "Computer Science", "Telugu", "Hindi", "Sanskrit"];
+          requiredSubjects = ["Mathematics", "Economics", "Commerce", "English"];
+        } else if (group === "mbipc") {
+          subjects = ["Mathematics", "Biology", "Physics", "Chemistry", "English", "Computer Science", "Psychology", "Environmental Science", "Physical Education"];
+          requiredSubjects = ["Mathematics", "Biology", "Physics", "Chemistry", "English"];
+        }
+      } else if (board === "isc") {
+        if (group === "mpc") {
+          subjects = ["Mathematics", "Physics", "Chemistry", "English", "Computer Science", "Engineering Science", "Bio Technology", "Environmental Science"];
+          requiredSubjects = ["Mathematics", "Physics", "Chemistry", "English"];
+        } else if (group === "bipc") {
+          subjects = ["Biology", "Physics", "Chemistry", "English", "Psychology", "Environmental Science", "Physical Education"];
+          requiredSubjects = ["Biology", "Physics", "Chemistry", "English"];
+        } else if (group === "cec") {
+          subjects = ["Commerce", "Economics", "Civics", "English", "Accountancy", "Business Studies", "Mathematics", "Computer Science"];
+          requiredSubjects = ["Commerce", "Economics", "Civics", "English"];
+        } else if (group === "hec") {
+          subjects = ["History", "Economics", "Civics", "English", "Sociology", "Psychology", "Geography", "Environmental Science"];
+          requiredSubjects = ["History", "Economics", "English"];
+        } else if (group === "mec") {
+          subjects = ["Mathematics", "Economics", "Commerce", "English", "Accountancy", "Business Studies", "Computer Science", "Statistics"];
+          requiredSubjects = ["Mathematics", "Economics", "Commerece", "English"];
+        } else if (group === "mbipc") {
+          subjects = ["Mathematics", "Biology", "Physics", "Chemistry", "English", "Computer Science", "Psychology", "Environmental Science", "Physical Education"];
+          requiredSubjects = ["Mathematics", "Biology", "Physics", "Chemistry", "English"];
+        }
+      }
+
+      container.innerHTML = createInputs(subjects, year + "th", requiredSubjects, classMarksStorage);
+    }
+
+    // B.Tech subjects data
+    const btechSubjectsData = {
+      "1": ["Linear Algebra", "Calculus and Ordinary Differential Equations", "PHYSICS", "ENGLISH", "PROGRAMMING&DATA STRUCTURES", "BIOLOGY", "DATA STRUCTURES LAB"],
+      "2": ["VECTOR CALCULUS", "ELECTRICAL& ELECTRONICS", "DESIGN THINKING", "OPTIMIZATION TECHNIQUES", "DATA STUCTURES &ALGORITHMS", "WEB PROGRAMMING LAB", "MATHEMATICAL FOUNDATION OF CS"],
+      "3": ["PROBABILITY & STATISTICS", "COMPUTER ORGANIZATION &ARCHITECTURE", "THEORY OF COMPUTATION", "DESIGN &ANALYSIS OF ALGORITHMS", "OBJECT ORIENTED PROGRAMMING", "OBJECT ORIENTED PROGRAMMING LAB", "STATISTICAL TOOLS PRACTICE"],
+      "4": ["BUSINESS ESSENTIALS", "COMPILER DESIGN", "SOFTWARE ENGNEERING", "DATA BASE MANAGEMENT SYSTEM", "OPERATING SYSTEM", "DATA BASE SYSTEM LAB", "OPERATING SYSTEM LAB"]
+    };
+
+    // Initialize all B.Tech marks with random values and display all semesters
+    function initializeAndDisplayAllBtechMarks() {
+      const btechSemestersContainer = document.getElementById("btechSemestersContainer");
+      btechSemestersContainer.innerHTML = ""; // Clear existing content
+
+      for (let sem = 1; sem <= 4; sem++) {
+        const semesterLabel = `B.Tech ${sem} Sem`;
+        const subjects = btechSubjectsData[sem.toString()];
+        let requiredBtechSubjects = [...subjects]; // All displayed are required
+
+        // Create a div for each semester
+        const semesterDiv = document.createElement('div');
+        semesterDiv.classList.add('btech-semester-section');
+        semesterDiv.innerHTML = `<h4>${semesterLabel} Marks</h4>`;
+
+        // Generate inputs for the current semester
+        const inputsHtml = createInputs(subjects, semesterLabel, requiredBtechSubjects, btechMarksStorage);
+        semesterDiv.innerHTML += inputsHtml;
+        btechSemestersContainer.appendChild(semesterDiv);
+
+        // Also ensure marks are in storage (for initial load and random generation)
+        subjects.forEach(sub => {
+          const key = `${sub}-${semesterLabel}`;
+          if (btechMarksStorage[key] === undefined || btechMarksStorage[key] === '') {
+            btechMarksStorage[key] = getRandomMark().toString();
+          }
+        });
+      }
+    }
+
+    // Initial call to set up B.Tech marks and display all semesters on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        initializeAndDisplayAllBtechMarks();
+    });
+
+    function submitForm(e) {
+      e.preventDefault(); // Prevent default page reload
+
+      const form = document.getElementById("academicForm");
+      const formData = new FormData(form);
+      const data = {};
+
+      // Collect data from visible inputs
+      for (let [key, value] of formData.entries()) {
+        data[key] = value;
+      }
+
+      // Validate all required fields
+      const tenthError = document.getElementById('tenthError');
+      const intermediateError = document.getElementById('intermediateError');
+      const btechError = document.getElementById('btechError');
+
+      tenthError.style.display = 'none';
+      intermediateError.style.display = 'none';
+      btechError.style.display = 'none';
+
+      let isValid = true;
+
+      // Validate 10th class marks
+      const board10 = document.getElementById("board10").value;
+      if (board10) {
+        const tenthInputs = document.querySelectorAll('#subjects10 input[required]');
+        tenthInputs.forEach(input => {
+          if (!input.value) {
+            isValid = false;
+            tenthError.style.display = 'block';
+          }
+        });
+      } else {
+        isValid = false;
+        tenthError.style.display = 'block';
+      }
+
+      // Validate Intermediate marks
+      const board11 = document.getElementById("board11").value;
+      const group11 = document.getElementById("group11") ? document.getElementById("group11").value : '';
+      const group12 = document.getElementById("group12") ? document.getElementById("group12").value : '';
+
+      if (board11 && group11 && group12) {
+        const interInputs11 = document.querySelectorAll('#subjects11 input[required]');
+        interInputs11.forEach(input => {
+          if (!input.value) {
+            isValid = false;
+            intermediateError.style.display = 'block';
+          }
+        });
+        const interInputs12 = document.querySelectorAll('#subjects12 input[required]');
+        interInputs12.forEach(input => {
+          if (!input.value) {
+            isValid = false;
+            intermediateError.style.display = 'block';
+          }
+        });
+      } else {
+        isValid = false;
+        intermediateError.style.display = 'block';
+      }
+
+      // Validate B.Tech marks (all semesters)
+      for (let sem = 1; sem <= 4; sem++) {
+        
+        const semesterLabel = `B.Tech ${sem} Sem`;
+        const subjects = btechSubjectsData[sem.toString()];
+        subjects.forEach(sub => {
+          const key = `${sub}-${semesterLabel}`;
+          if (!data[key] || data[key] < 30 || data[key] > 100) { // Check if value is missing or invalid
+            isValid = false;
+            btechError.style.display = 'block';
+          }
+        });
+      }
+
+
+      if (!isValid) {
+        alert("Please fill in all required fields and ensure marks are between 30 and 100.");
+        return;
+      }
+
+      // At this point, `data` object contains all the collected marks
+      // You can now send `data` to your backend using fetch as before.
+      fetch('/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => {
+        if (!res.ok) {
+            // If response is not OK (e.g., 404, 500), try to read error message
+            return res.text().then(text => { throw new Error(text) });
+        }
+        return res.json();
+      })
+      .then(recommendations => {
+        alert("Recommended Electives:\n" + recommendations.join("\n"));
+      })
+      .catch(err => {
+        alert("Error occurred: " + err.message); // Display the error message from the thrown error
+      });
+    }
+
+  </script>
+</body>
+</html>
