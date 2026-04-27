@@ -1,0 +1,125 @@
+ELECTIVE,DEPARTMENT,TYPE,CATEGORY
+Advanced Algorithms,CSE,PE-I,MATHEMATICS|PROGRAMMING
+Advanced Computer Architecture,CSE,PE-I,HARDWARE|CORE_ENGINEERING
+Artificial Intelligence,CSE,PE-I,AI|DATA|PROGRAMMING
+Computational Number Theory,CSE,PE-I,MATHEMATICS
+Programming Language Concepts,CSE,PE-I,PROGRAMMING|SOFTWARE
+Software Testing,CSE,PE-I,SOFTWARE
+Advanced Data Mining,CSE,PE-II,DATA|AI
+Advanced Databases,CSE,PE-II,DATA|SOFTWARE
+Bio Informatics,CSE,PE-II,INTERDISCIPLINARY|DATA
+Computer Vision and Image Processing,CSE,PE-II,AI|DATA
+Data Networks,CSE,PE-II,NETWORKS
+Design Patterns,CSE,PE-II,SOFTWARE
+Foundations of Blockchain Technology,CSE,PE-II,SOFTWARE|NETWORKS
+Information Retrieval,CSE,PE-II,DATA
+Mobile Computing,CSE,PE-II,SOFTWARE|NETWORKS
+Natural Language Processing,CSE,PE-II,AI|DATA
+Program Analysis and Verification,CSE,PE-II,SOFTWARE
+Software Metrics and Software Project Management,CSE,PE-II,SOFTWARE
+Cloud Computing,CSE,PE-IV,SOFTWARE|NETWORKS
+Data Science,CSE,PE-IV,DATA|MATHEMATICS
+Deep Learning,CSE,PE-IV,AI
+Design of Secure Protocols,CSE,PE-IV,SECURITY
+Internet of Things I,CSE,PE-IV,HARDWARE|NETWORKS
+Intrusion Detection Systems,CSE,PE-IV,SECURITY
+Quantum Computing,CSE,PE-IV,CORE_ENGINEERING
+Real Time Systems,CSE,PE-IV,SOFTWARE
+Secure Software Engineering,CSE,PE-IV,SECURITY
+Security and Privacy,CSE,PE-IV,SECURITY
+Service Oriented Architecture,CSE,PE-IV,SOFTWARE
+Software Reliability Techniques,CSE,PE-IV,SOFTWARE
+Advanced Theoretical Computer Science,CSE,PE-VI,CORE_ENGINEERING
+Agri Bioinformatics,CSE,PE-VI,INTERDISCIPLINARY
+Algorithmic Game Theory,CSE,PE-VI,MATHEMATICS
+Algorithmic Techniques for Big Data,CSE,PE-VI,DATA
+Computational Neuro Science,CSE,PE-VI,INTERDISCIPLINARY
+Cyber Laws and IPR,CSE,PE-VI,INTERDISCIPLINARY
+Cyber Security,CSE,PE-VI,SECURITY
+Fog and Edge Computing,CSE,PE-VI,NETWORKS
+Formal Methods in Software Engineering,CSE,PE-VI,SOFTWARE
+Game Theory,CSE,PE-VI,MATHEMATICS
+GPU Architecture and Computing,CSE,PE-VI,HARDWARE
+Heterogeneous Computing,CSE,PE-VI,HARDWARE
+Human Computer Interaction,CSE,PE-VI,SOFTWARE
+IoT Security,CSE,PE-VI,SECURITY
+Medical Image Processing,CSE,PE-VI,AI|DATA
+Semantic Web,CSE,PE-VI,DATA
+Social Networks,CSE,PE-VI,DATA
+Software Defined Networks,CSE,PE-VI,NETWORKS
+Virtual Reality and Augmented Reality,CSE,PE-VI,INTERDISCIPLINARY
+Electronic Instrumentation,ECE,PE-I,HARDWARE
+Organic Electronics,ECE,PE-I,CORE_ENGINEERING
+CMOS VLSI Design,ECE,PE-I,HARDWARE
+Introduction to Artificial Intelligence and Machine Learning,ECE,PE-II,AI
+Embedded and Real Time Operating Systems,ECE,PE-II,HARDWARE|SOFTWARE
+Web Technologies,ECE,PE-II,SOFTWARE
+Low Power VLSI,ECE,PE-II,HARDWARE
+Internet of Things,ECE,PE-III,HARDWARE|NETWORKS
+Cellular and Mobile Communications,ECE,PE-III,NETWORKS
+Control System Engineering,ECE,PE-III,CORE_ENGINEERING
+Verification and Testing,ECE,PE-III,SOFTWARE
+Digital Image Processing and Computer Vision,ECE,PE-IV,AI|DATA
+Hardware and Software Co-design,ECE,PE-IV,HARDWARE|SOFTWARE
+Satellite Communications,ECE,PE-IV,NETWORKS
+Electronics System Packaging,ECE,PE-IV,HARDWARE
+RF Microelectronics,ECE,PE-V,HARDWARE
+Introduction to ASIC Design,ECE,PE-V,HARDWARE
+Cryptography and Network Security,ECE,PE-V,SECURITY
+Computer Architecture and Organization,ECE,PE-V,HARDWARE
+Advanced Digital Signal Processing,ECE,PE-VI,CORE_ENGINEERING
+Speech Processing,ECE,PE-VI,AI
+Telecom Switching,ECE,PE-VI,NETWORKS
+Wireless Communication-5G Use Cases,ECE,PE-VI,NETWORKS
+Optimization Techniques,ECE,PE-VII,MATHEMATICS
+Radar Engineering,ECE,PE-VII,CORE_ENGINEERING
+Software Defined Radio,ECE,PE-VII,NETWORKS
+CAD for IC Design,ECE,PE-VII,HARDWARE
+Cloud based Technologies,ECE,PE-VIII,SOFTWARE
+IPR and Cyber Laws,ECE,PE-VIII,INTERDISCIPLINARY
+Biomedical Instrumentation and Signal Processing,ECE,PE-VIII,CORE_ENGINEERING
+Adhoc Networks,ECE,PE-VIII,NETWORKS
+Computational Fluid Dynamics,MECH,PE-I,CORE_ENGINEERING
+Automobile Engineering,MECH,PE-I,CORE_ENGINEERING
+Advanced Welding Technology,MECH,PE-I,CORE_ENGINEERING
+Mechatronics,MECH,PE-I,INTERDISCIPLINARY
+Mechanical Vibrations,MECH,PE-I,CORE_ENGINEERING
+Geometric Modelling for CAD,MECH,PE-I,SOFTWARE
+Mechanical Measurements,MECH,PE-II,CORE_ENGINEERING
+Alternate Fuels,MECH,PE-II,INTERDISCIPLINARY
+Finite Element Method,MECH,PE-II,CORE_ENGINEERING
+Operations Research,MECH,PE-II,MATHEMATICS
+Design of Mechanical Elements,MECH,PE-II,CORE_ENGINEERING
+Robotics,MECH,PE-IV,INTERDISCIPLINARY
+Power Plant Engineering,MECH,PE-IV,CORE_ENGINEERING
+Artificial Intelligence for Cyber-Physical Systems,MECH,PE-IV,AI
+Tool Design,MECH,PE-IV,CORE_ENGINEERING
+Tribology,MECH,PE-IV,CORE_ENGINEERING
+Concrete Technology,CIVIL,PE-I,CORE_ENGINEERING
+Ground Water Development,CIVIL,PE-I,CORE_ENGINEERING
+Industrial Wastewater Treatment,CIVIL,PE-I,INTERDISCIPLINARY
+Remote Sensing,CIVIL,PE-I,DATA
+Construction Geotechniques,CIVIL,PE-I,CORE_ENGINEERING
+GIS for Civil Engineering Applications,CIVIL,PE-II,DATA
+Prestressed Concrete,CIVIL,PE-II,CORE_ENGINEERING
+Foundation Analysis and Design,CIVIL,PE-III,CORE_ENGINEERING
+Highway Construction,CIVIL,PE-III,CORE_ENGINEERING
+Air Pollution,CIVIL,PE-IV,INTERDISCIPLINARY
+Traffic Engineering Design,CIVIL,PE-IV,CORE_ENGINEERING
+Earthquake Resistant Design,CIVIL,PE-V,CORE_ENGINEERING
+Rock Engineering,CIVIL,PE-VI,CORE_ENGINEERING
+Seismic Hazard Analysis,CIVIL,PE-VII,CORE_ENGINEERING
+River Hydraulics,CIVIL,PE-VIII,CORE_ENGINEERING
+Utilization of Electrical Energy,EEE,PE-I,CORE_ENGINEERING
+Industrial Instrumentation and Automation,EEE,PE-I,HARDWARE
+IoT in Electrical Engineering,EEE,PE-I,HARDWARE|NETWORKS
+Special Machines,EEE,PE-I,CORE_ENGINEERING
+Python Programming,EEE,PE-I,PROGRAMMING
+Design of Electrical Systems,EEE,PE-II,CORE_ENGINEERING
+AI Techniques in Electrical Engineering,EEE,PE-II,AI
+High Voltage Engineering,EEE,PE-II,CORE_ENGINEERING
+Switched Mode Power Conversion,EEE,PE-IV,CORE_ENGINEERING
+Electric Vehicles,EEE,PE-IV,INTERDISCIPLINARY
+Power Quality,EEE,PE-IV,CORE_ENGINEERING
+Smart Grid Technologies,EEE,PE-VI,NETWORKS
+Advanced Electrical Drive Systems,EEE,PE-VI,CORE_ENGINEERING

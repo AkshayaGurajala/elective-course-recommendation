@@ -1,0 +1,301 @@
+department,math_score,programming_score,electronics_score,mechanical_score,civil_score,elective
+MECH,71,35,55,85,86,Manufacturing
+EEE,58,93,85,77,75,Power Electronics
+EEE,60,76,100,81,50,Power Electronics
+ECE,65,91,44,77,82,Digital Signal Processing
+MECH,68,72,93,36,65,Manufacturing
+CIVIL,99,34,85,38,78,Structural Engineering
+CSE,82,56,41,42,49,Cyber Security
+CIVIL,42,33,79,97,81,Geotechnical Engineering
+CIVIL,79,38,86,62,71,Environmental Engineering
+ECE,57,90,51,30,76,Embedded Systems
+MECH,97,79,44,45,54,Manufacturing
+CIVIL,83,85,90,50,63,Environmental Engineering
+EEE,45,50,73,62,76,Control Systems
+ECE,84,68,43,54,69,VLSI Design
+CIVIL,92,62,94,94,38,Structural Engineering
+ECE,98,92,30,65,90,Digital Signal Processing
+MECH,64,88,63,57,61,Automobile Engineering
+EEE,57,63,45,98,75,Control Systems
+ECE,90,76,81,96,54,VLSI Design
+CIVIL,72,59,44,30,98,Structural Engineering
+EEE,87,84,44,76,74,Power Electronics
+EEE,69,63,75,100,74,Power Systems
+MECH,69,97,36,65,33,Automobile Engineering
+MECH,44,72,92,30,59,Automobile Engineering
+CIVIL,100,62,66,45,48,Environmental Engineering
+ECE,87,37,54,64,34,VLSI Design
+MECH,60,60,97,68,95,Thermal Engineering
+EEE,41,73,40,100,84,Power Electronics
+CIVIL,95,87,74,83,35,Structural Engineering
+CIVIL,81,42,64,83,77,Structural Engineering
+EEE,60,34,77,34,56,Power Electronics
+CSE,74,83,48,76,48,Machine Learning
+CIVIL,56,59,62,54,70,Environmental Engineering
+EEE,48,56,99,51,33,Power Electronics
+CIVIL,73,43,96,71,95,Environmental Engineering
+EEE,48,77,52,53,82,Control Systems
+CIVIL,55,89,83,43,50,Geotechnical Engineering
+MECH,62,92,98,67,84,Manufacturing
+EEE,66,97,70,58,34,Power Systems
+EEE,65,77,51,52,90,Control Systems
+EEE,80,37,48,91,35,Power Systems
+CIVIL,68,39,67,79,69,Structural Engineering
+ECE,85,61,76,70,82,VLSI Design
+CSE,47,56,68,60,53,Cloud Computing
+EEE,89,72,38,51,89,Control Systems
+CIVIL,53,41,69,63,83,Environmental Engineering
+CIVIL,78,45,46,84,90,Environmental Engineering
+EEE,86,96,39,44,77,Control Systems
+EEE,56,52,42,50,81,Power Systems
+EEE,97,76,85,36,87,Power Electronics
+EEE,96,62,92,41,75,Control Systems
+CSE,49,92,42,71,66,Machine Learning
+ECE,88,70,47,44,79,Digital Signal Processing
+ECE,91,37,50,75,40,Embedded Systems
+MECH,69,37,90,61,88,Automobile Engineering
+ECE,45,53,40,82,46,VLSI Design
+CSE,87,88,35,78,74,Cyber Security
+CSE,48,98,48,72,70,Cyber Security
+MECH,62,40,100,84,97,Thermal Engineering
+CIVIL,92,40,86,61,47,Environmental Engineering
+EEE,46,59,34,51,98,Power Electronics
+CSE,78,47,67,72,32,Cloud Computing
+CIVIL,41,59,41,62,35,Structural Engineering
+ECE,99,62,40,32,59,VLSI Design
+MECH,58,66,33,75,54,Thermal Engineering
+CSE,93,66,71,82,33,Cyber Security
+MECH,81,42,78,92,47,Automobile Engineering
+MECH,47,36,49,85,72,Manufacturing
+EEE,44,53,78,49,47,Control Systems
+ECE,80,59,86,70,39,Digital Signal Processing
+CSE,74,82,92,81,66,Cyber Security
+MECH,94,30,47,63,61,Automobile Engineering
+ECE,76,34,81,99,34,Digital Signal Processing
+MECH,80,77,47,45,81,Automobile Engineering
+CIVIL,65,88,99,35,72,Structural Engineering
+ECE,86,87,30,40,36,Embedded Systems
+CIVIL,80,57,80,63,94,Structural Engineering
+MECH,91,94,63,39,94,Automobile Engineering
+MECH,81,56,35,99,57,Manufacturing
+CIVIL,70,59,44,99,36,Environmental Engineering
+EEE,76,82,48,36,95,Power Systems
+EEE,65,86,43,81,48,Power Electronics
+ECE,51,57,44,75,84,VLSI Design
+EEE,76,84,56,78,77,Control Systems
+CSE,45,73,68,96,73,Machine Learning
+CSE,79,41,51,39,41,Data Science
+MECH,48,80,78,88,68,Manufacturing
+EEE,45,94,46,76,65,Control Systems
+CIVIL,69,94,42,92,83,Geotechnical Engineering
+EEE,100,50,47,50,33,Power Systems
+MECH,82,64,52,75,48,Automobile Engineering
+CIVIL,84,55,32,35,49,Structural Engineering
+CSE,40,45,63,31,80,Cloud Computing
+EEE,53,68,66,70,78,Power Electronics
+ECE,85,62,36,49,64,Digital Signal Processing
+MECH,51,85,38,48,69,Thermal Engineering
+CSE,72,80,82,57,32,Machine Learning
+CIVIL,86,68,55,49,88,Environmental Engineering
+ECE,70,56,64,57,77,Digital Signal Processing
+CIVIL,79,61,40,45,39,Geotechnical Engineering
+ECE,57,39,87,84,50,Embedded Systems
+CSE,89,85,85,55,83,Machine Learning
+CSE,97,80,49,33,51,Data Science
+CSE,47,60,79,84,64,Cyber Security
+CSE,75,92,98,56,92,Data Science
+MECH,40,99,34,86,90,Manufacturing
+CSE,65,55,44,42,97,Cloud Computing
+ECE,76,51,78,54,52,Embedded Systems
+EEE,77,41,69,53,66,Power Electronics
+ECE,44,42,64,90,83,Embedded Systems
+ECE,64,64,34,51,64,Embedded Systems
+MECH,67,77,81,50,42,Thermal Engineering
+ECE,68,57,56,44,87,VLSI Design
+CIVIL,55,77,100,72,74,Structural Engineering
+CSE,63,96,62,51,87,Cyber Security
+ECE,51,60,61,59,52,Digital Signal Processing
+CSE,69,52,34,50,61,Data Science
+CSE,58,55,41,49,99,Cloud Computing
+ECE,61,64,43,37,91,Digital Signal Processing
+EEE,62,31,45,95,97,Power Systems
+CSE,99,42,59,70,76,Cyber Security
+CIVIL,67,95,94,89,41,Geotechnical Engineering
+MECH,82,88,51,84,59,Thermal Engineering
+CSE,40,86,87,59,94,Cyber Security
+EEE,79,94,100,56,71,Control Systems
+EEE,62,83,74,99,76,Power Systems
+EEE,63,100,76,99,43,Power Electronics
+EEE,87,74,51,83,84,Power Electronics
+ECE,42,71,34,44,54,VLSI Design
+ECE,87,100,36,95,53,VLSI Design
+ECE,84,64,93,35,81,Digital Signal Processing
+MECH,61,35,54,57,42,Manufacturing
+MECH,83,63,62,60,75,Manufacturing
+CIVIL,85,41,42,42,97,Geotechnical Engineering
+CSE,62,52,57,61,82,Data Science
+EEE,72,37,89,77,93,Power Systems
+CSE,63,50,99,37,93,Machine Learning
+ECE,60,88,84,82,56,VLSI Design
+MECH,40,51,32,82,62,Manufacturing
+MECH,63,82,77,51,67,Automobile Engineering
+MECH,43,85,39,59,68,Manufacturing
+CSE,78,34,88,63,51,Data Science
+CSE,99,74,50,60,74,Cyber Security
+EEE,90,93,31,71,47,Power Systems
+MECH,96,73,37,62,75,Automobile Engineering
+EEE,43,84,81,84,94,Power Electronics
+ECE,80,92,71,79,30,Embedded Systems
+EEE,71,56,88,59,80,Control Systems
+ECE,49,88,31,53,95,VLSI Design
+MECH,57,58,91,51,62,Manufacturing
+CSE,80,90,100,76,55,Cloud Computing
+ECE,52,63,96,54,61,Digital Signal Processing
+ECE,91,86,47,43,84,Digital Signal Processing
+ECE,61,40,84,44,93,Embedded Systems
+CIVIL,53,92,81,88,68,Environmental Engineering
+CIVIL,62,98,32,89,87,Structural Engineering
+CSE,67,99,75,68,99,Machine Learning
+EEE,50,68,88,75,95,Power Electronics
+EEE,47,88,57,43,75,Power Electronics
+EEE,83,55,57,93,100,Power Electronics
+MECH,46,50,92,47,70,Automobile Engineering
+CIVIL,96,42,45,84,60,Environmental Engineering
+EEE,72,93,51,83,42,Control Systems
+EEE,75,63,38,81,37,Control Systems
+CIVIL,48,83,60,65,73,Structural Engineering
+CIVIL,82,30,43,95,75,Structural Engineering
+MECH,67,85,33,88,96,Automobile Engineering
+MECH,66,41,53,76,47,Thermal Engineering
+MECH,87,94,74,40,53,Automobile Engineering
+ECE,90,34,83,64,71,Embedded Systems
+CSE,99,73,62,95,73,Machine Learning
+MECH,44,41,39,98,82,Thermal Engineering
+EEE,77,82,34,60,50,Control Systems
+ECE,51,96,63,34,70,VLSI Design
+MECH,91,69,98,32,72,Automobile Engineering
+CSE,74,35,53,60,44,Cloud Computing
+MECH,40,96,78,48,73,Thermal Engineering
+MECH,42,36,86,70,53,Automobile Engineering
+CSE,40,54,48,40,85,Cyber Security
+EEE,95,62,85,63,76,Control Systems
+ECE,91,42,67,86,34,Embedded Systems
+EEE,84,95,62,48,54,Control Systems
+ECE,95,91,96,48,95,Digital Signal Processing
+MECH,99,99,81,32,58,Manufacturing
+EEE,64,37,35,39,30,Control Systems
+CIVIL,46,79,53,38,80,Geotechnical Engineering
+MECH,98,39,73,100,32,Automobile Engineering
+ECE,63,67,40,62,61,Embedded Systems
+EEE,47,65,77,69,94,Power Electronics
+CSE,41,58,55,41,40,Cloud Computing
+CSE,51,36,54,38,71,Cloud Computing
+CIVIL,76,85,53,45,99,Structural Engineering
+CIVIL,100,55,48,31,69,Geotechnical Engineering
+MECH,81,82,86,74,97,Manufacturing
+CSE,44,67,43,41,98,Cloud Computing
+CIVIL,71,94,31,90,68,Environmental Engineering
+MECH,93,37,40,41,65,Manufacturing
+CIVIL,57,67,34,52,64,Environmental Engineering
+CSE,67,30,98,83,100,Machine Learning
+CSE,69,42,99,92,48,Machine Learning
+CSE,51,97,42,73,59,Machine Learning
+MECH,62,50,53,58,40,Thermal Engineering
+CIVIL,81,50,34,89,74,Geotechnical Engineering
+CIVIL,53,60,96,87,43,Structural Engineering
+CSE,71,52,76,67,80,Cloud Computing
+EEE,89,85,51,39,82,Power Electronics
+MECH,57,65,74,31,35,Thermal Engineering
+ECE,72,69,73,38,32,VLSI Design
+CIVIL,46,71,86,52,91,Structural Engineering
+CSE,100,85,31,36,35,Machine Learning
+CIVIL,76,57,78,59,40,Environmental Engineering
+CSE,100,33,65,87,54,Machine Learning
+CSE,84,89,92,37,51,Data Science
+ECE,58,57,64,71,85,Embedded Systems
+CSE,46,39,71,59,69,Cyber Security
+EEE,94,52,74,83,41,Power Electronics
+EEE,63,55,44,77,82,Power Systems
+CIVIL,99,77,51,97,53,Environmental Engineering
+EEE,63,73,30,96,88,Power Systems
+ECE,45,76,57,77,48,VLSI Design
+ECE,99,78,97,61,98,VLSI Design
+CSE,53,46,71,33,93,Cyber Security
+EEE,91,96,70,36,87,Control Systems
+MECH,41,76,84,89,64,Automobile Engineering
+EEE,54,56,87,53,73,Power Systems
+MECH,83,53,72,58,73,Automobile Engineering
+CSE,77,66,39,58,76,Cyber Security
+MECH,98,38,38,41,35,Automobile Engineering
+EEE,78,68,51,53,47,Control Systems
+CSE,73,53,54,33,64,Machine Learning
+ECE,51,44,46,80,47,Embedded Systems
+ECE,59,56,53,59,53,VLSI Design
+ECE,83,37,58,49,83,Embedded Systems
+CSE,82,85,88,77,68,Data Science
+CIVIL,88,66,78,62,54,Structural Engineering
+EEE,56,96,81,91,51,Control Systems
+MECH,40,80,88,53,90,Thermal Engineering
+EEE,88,51,43,64,73,Power Systems
+ECE,52,100,50,45,87,VLSI Design
+EEE,90,65,97,93,42,Control Systems
+CSE,59,96,67,47,46,Data Science
+CSE,53,95,85,62,31,Cyber Security
+EEE,76,93,37,36,88,Control Systems
+EEE,87,43,73,57,43,Control Systems
+ECE,99,100,64,90,58,Digital Signal Processing
+MECH,56,48,34,83,86,Thermal Engineering
+MECH,66,71,49,74,36,Manufacturing
+EEE,66,56,95,35,51,Power Systems
+ECE,75,84,54,70,93,Embedded Systems
+CIVIL,42,51,57,66,52,Geotechnical Engineering
+MECH,95,53,33,98,36,Thermal Engineering
+MECH,97,49,98,38,43,Manufacturing
+MECH,71,67,74,91,89,Thermal Engineering
+ECE,62,40,55,87,57,Embedded Systems
+MECH,53,49,30,31,92,Manufacturing
+ECE,76,45,57,49,50,Digital Signal Processing
+ECE,85,99,100,48,61,Digital Signal Processing
+ECE,48,54,55,47,81,Embedded Systems
+ECE,47,30,96,31,38,VLSI Design
+EEE,71,61,94,35,70,Power Systems
+ECE,79,80,32,30,35,Embedded Systems
+ECE,47,33,97,73,76,Embedded Systems
+ECE,57,76,59,98,99,Embedded Systems
+MECH,82,51,60,80,79,Manufacturing
+ECE,89,86,67,47,59,VLSI Design
+EEE,46,54,42,49,39,Power Systems
+EEE,48,72,85,56,89,Power Systems
+CSE,64,59,76,73,95,Machine Learning
+CSE,82,90,41,77,64,Data Science
+MECH,48,37,70,76,90,Manufacturing
+ECE,61,75,72,80,99,Digital Signal Processing
+EEE,41,93,44,95,73,Power Systems
+EEE,49,58,81,58,55,Power Electronics
+MECH,90,30,42,87,64,Automobile Engineering
+MECH,83,71,69,100,95,Thermal Engineering
+MECH,95,90,38,57,83,Manufacturing
+ECE,60,65,99,40,74,Embedded Systems
+CSE,53,49,33,46,38,Cloud Computing
+MECH,86,75,59,40,95,Automobile Engineering
+ECE,97,45,83,43,74,VLSI Design
+EEE,88,62,67,75,58,Power Systems
+EEE,98,63,72,55,35,Power Electronics
+ECE,100,75,46,32,79,VLSI Design
+EEE,90,94,75,100,98,Power Electronics
+ECE,80,53,41,88,71,Digital Signal Processing
+CIVIL,79,38,35,82,86,Environmental Engineering
+CIVIL,44,56,86,61,76,Structural Engineering
+CSE,42,70,97,69,64,Machine Learning
+CSE,67,31,90,90,58,Machine Learning
+CSE,52,77,82,76,87,Cyber Security
+CIVIL,86,79,95,41,57,Geotechnical Engineering
+MECH,69,62,41,96,31,Automobile Engineering
+CSE,40,82,43,84,83,Cyber Security
+ECE,69,78,79,75,82,Embedded Systems
+MECH,41,62,87,74,83,Automobile Engineering
+MECH,66,85,66,59,41,Automobile Engineering
+CIVIL,80,74,98,38,62,Environmental Engineering
+CIVIL,56,50,80,87,35,Geotechnical Engineering
+MECH,80,34,100,60,35,Manufacturing
+CSE,58,33,33,75,42,Machine Learning
