@@ -113,6 +113,34 @@ Users can edit the marks and submit again to generate personalized recommendatio
 
 ### Recommendation Output
 ![Output](screenshots/recommendation-output.png)
+
+## System Architecture
+
+Student Marks Input  
+      ↓  
+Feature Extraction  
+      ↓  
+Random Forest Prediction  
+      ↓  
+Hybrid Ranking  
+      ↓  
+Elective Recommendation
+
+## Machine Learning Model
+
+Algorithm: Random Forest Classifier
+
+Input Features:
+- Mathematics Score
+- Programming Score
+- Electronics Score
+- Mechanical Score
+- Civil Score
+- Department
+
+Output:
+Recommended Professional Electives
+
 ## Future Improvements
 
 - Use real student historical elective selection data  
