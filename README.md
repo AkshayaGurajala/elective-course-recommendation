@@ -109,7 +109,7 @@ Users can edit the marks and submit again to generate personalized recommendatio
 ## Screenshots
 
 ### Home Interface
-![UI](screenshots/home-page.png)
+![UI](screenshots/Home-page.png)
 
 ### Recommendation Output
 ![Output](screenshots/recommendation-output.png)
