@@ -106,7 +106,13 @@ Recommended Elective 2
 Marks in the form are auto-filled with random sample values for demonstration.
 
 Users can edit the marks and submit again to generate personalized recommendations.
+## Screenshots
 
+### Home Interface
+![UI](screenshots/home-page.png)
+
+### Recommendation Output
+![Output](screenshots/recommendation-output.png)
 ## Future Improvements
 
 - Use real student historical elective selection data  
